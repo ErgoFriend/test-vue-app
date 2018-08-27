@@ -9,11 +9,11 @@
       </div>
       <!-- 未ログイン時にはログインボタンを表示 -->
       <div v-else key="logout">
-        <a @click="doLogin"><i class="fab fa-twitter fa-fw fa-2x" style="color:white"></i></a>
-        <a @click="doLogin"><i class="fab fa-google fa-fw fa-2x" style="color:white"></i></a>
-        <a @click="doLogin"><i class="fab fa-github fa-fw fa-2x" style="color:white"></i></a>
-        <a @click="doLogin"><i class="fab fa-facebook fa-fw fa-2x" style="color:white"></i></a>
-        <a @click="doLogin"><i class="fas fa-envelope fa-fw fa-2x" style="color:white"></i></a>
+        <a @click="doTwitter"><i class="fab fa-twitter fa-fw fa-2x" style="color:white"></i></a>
+        <a @click="doGoogle"><i class="fab fa-google fa-fw fa-2x" style="color:white"></i></a>
+        <a @click="doGoogle"><i class="fab fa-github fa-fw fa-2x" style="color:white"></i></a>
+        <a @click="doGoogle"><i class="fab fa-facebook fa-fw fa-2x" style="color:white"></i></a>
+        <a @click="doGoogle"><i class="fas fa-envelope fa-fw fa-2x" style="color:white"></i></a>
       </div>
     </header>
 
@@ -71,8 +71,12 @@ export default {
   },
   methods: {
     // ログイン処理
-    doLogin() {
+    doTwitter() {
       const provider = new firebase.auth.TwitterAuthProvider();
+      firebase.auth().signInWithPopup(provider);
+    },
+    doGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider);
     },
     // ログアウト処理
