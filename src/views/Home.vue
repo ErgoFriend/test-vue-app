@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/logo.png" width="300" height="300">
     <HelloWorld msg="Welcome to Test App"/>
   </div>
 </template>

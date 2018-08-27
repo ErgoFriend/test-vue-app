@@ -16,7 +16,6 @@
         <a @click="doGoogle"><i class="fas fa-envelope fa-fw fa-2x" style="color:white"></i></a>
       </div>
     </header>
-
     <!--　Firebase から取得したリストを描画（トランジション付き）　-->
     <transition-group name="chat" tag="div" class="list content">
       <section v-for="{ key, name, image, message } in chat" :key="key" class="item">
@@ -29,7 +28,6 @@
         </div>
       </section>
     </transition-group>
-  
     <!-- 入力フォーム -->
     <form action="" @submit.prevent="doSend" class="form">
       <textarea
@@ -129,15 +127,16 @@ export default {
   box-sizing: border-box;
 }
 .header {
-  background: #3ab383;
+  background: #3a5ab3;
   margin-bottom: 1em;
   padding: 0.4em 0.8em;
   color: #fff;
 }
 .content {
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 5%;
   max-width: 600px;
+  overflow: scroll;
 }
 .form {
   position: fixed;
@@ -145,8 +144,8 @@ export default {
   justify-content: center;
   align-items: center;
   bottom: 0;
-  height: 80px;
-  width: 100%;
+  height: 10%;
+  width: 100vw;
   background: #f5f5f5;
 }
 .form textarea {
