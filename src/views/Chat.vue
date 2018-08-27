@@ -17,7 +17,8 @@
       </div>
     </header>
     <!--　Firebase から取得したリストを描画（トランジション付き）　-->
-    <transition-group name="chat" tag="div" class="list content">
+    <div class="content" id="chrollid">
+    <transition-group name="chat" tag="div" class="list">
       <section v-for="{ key, name, image, message } in chat" :key="key" class="item">
         <div class="item-image"><img :src="image" width="40" height="40"></div>
         <div class="item-detail">
@@ -28,6 +29,7 @@
         </div>
       </section>
     </transition-group>
+    </div>
     <!-- 入力フォーム -->
     <form action="" @submit.prevent="doSend" class="form">
       <textarea
@@ -97,7 +99,9 @@ export default {
         image: message.image,
         message: message.message
       });
-      this.scrollBottom();
+      //this.scrollBottom();
+      var obj = document.getElementById("chrollid");
+      obj.scrollTop = obj.scrollHeight;
     },
     doSend() {
       if (this.user.uid && this.input.length) {
@@ -137,6 +141,7 @@ export default {
   padding: 5%;
   max-width: 600px;
   overflow: scroll;
+  height: 70vh;
 }
 .form {
   position: fixed;
