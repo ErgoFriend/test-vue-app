@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
 import firebase from 'firebase'
-
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+//https://code.luasoftware.com/tutorials/npm/fontawesome-5-pro-npm-and-webpack-guide/
 Vue.config.productionTip = false
 
 // Initialize Firebase
