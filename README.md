@@ -1,4 +1,5 @@
-# buefy-test
+# test-vue-chat
+[https://ergofriend-chat.netlify.com/](https://ergofriend-chat.netlify.com/)
 
 ## Project setup
 ```
